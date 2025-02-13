@@ -1,0 +1,66 @@
+{
+  "userDetails": {
+    "username": "",
+    "password": ""
+  },
+
+  "customerInfo": [
+    {
+      "validPhone": "09088752432",
+      "validPassword": "09088752432",
+      "filePath": "cypress/fixtures/fileUploads/testimage.jpg",
+      "address": {
+        "name": "Omoniyi Osadare",
+        "place": "Surulere"
+      }
+    },
+
+    {
+      "invalidPhone": "0809511821",
+      "validPassword": "08095118218",
+      "filePath": "",
+      "address": {
+        "name": "Omoniyi Osadare",
+        "place": "Surulere"
+      }
+    },
+    {
+      "invalidPhone": "0809511821",
+      "invalidPassword": "0809511821",
+      "filePath": "",
+      "address": {
+        "name": "Omoniyi Osadare",
+        "place": "Surulere"
+      }
+    },
+    {
+        "blankPhone": "#",
+        "validPassword": "08095118218",
+        "filePath": "",
+        "address": {
+          "name": "Omoniyi Osadare",
+          "place": "Surulere"
+        }
+      },
+
+      {
+        "NonExistingCustomerPhone": "080120000000",
+        "validPassword": "",
+        "filePath": "",
+        "address": {
+          "name": "Omoniyi Osadare",
+          "place": "Surulere"
+        }
+      },
+
+      {
+        "CustomerNumberNotStartingWith0": "80120000000",
+        "validPassword": "",
+        "filePath": "",
+        "address": {
+          "name": "Omoniyi Osadare",
+          "place": "Surulere"
+        }
+      }
+  ]
+}
