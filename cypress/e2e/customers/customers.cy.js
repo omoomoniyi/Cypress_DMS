@@ -9,6 +9,7 @@ describe("Customers", () => {
       cy.validLoginFlow(customerDetailsInfo);
 
       cy.wait(5000);
+
       cy.get(".burger > .material-symbols-outlined").click();
       cy.get(":nth-child(2) > .sidebar-nav-item--link > span").click();
       cy.get(".btn").click();
@@ -16,7 +17,7 @@ describe("Customers", () => {
         cy.get(":nth-child(1) > div > .form__input").type(fullName);
         cy.log(`Generated Name: ${fullName}`);
       });
-      //cy.get(":nth-child(1) > div > .form__input").type("Omoniyi");
+      cy.get(":nth-child(1) > div > .form__input").type(" Omoniyi iDan");
       cy.generateEmail().then((email) => {
         cy.get("#email").type(email);
         cy.log(email);
@@ -26,5 +27,7 @@ describe("Customers", () => {
         cy.get('.form-buttons > .app-button > .btn').click();
       });
     });
+    cy.visit("/");
+
   });
 });
