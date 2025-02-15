@@ -26,6 +26,14 @@ jobs:
         with:
           node-version: 18
 
+      - name: Cache Cypress Binary
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache/Cypress
+          key: cypress-cache-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+          restore-keys: |
+            cypress-cache-${{ runner.os }}-
+
       - name: Delete Cypress Cache (if needed)
         run: rm -rf ~/.cache/Cypress || true    
 
@@ -37,8 +45,6 @@ jobs:
 
       - name: Install Cypress
         run: npx cypress install
-
-    
 
       - name: Clear Cypress Cache
         run: ./node_modules/.bin/cypress cache clear
