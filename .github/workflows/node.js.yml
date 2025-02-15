@@ -34,27 +34,11 @@ jobs:
           restore-keys: |
             cypress-cache-${{ runner.os }}-
 
-      - name: Delete Cypress Cache (if needed)
-        run: rm -rf ~/.cache/Cypress || true    
-
       - name: Install dependencies
         run: npm install
-
-      - name: Fix Cypress Permissions
-        run: chmod +x ./node_modules/.bin/cypress || true
 
       - name: Install Cypress Binary
         run: npx cypress install
 
-      - name: Fix Cypress Permissions
-        run: chmod +x ./node_modules/.bin/cypress
-
-      - name: Install Cypress
-        run: npx cypress install
-
-      - name: Clear Cypress Cache
-        run: ./node_modules/.bin/cypress cache clear
-
       - name: Run Cypress tests in headless Chrome
         run: npx cypress run --browser chrome --headless --config defaultCommandTimeout=10000
-
