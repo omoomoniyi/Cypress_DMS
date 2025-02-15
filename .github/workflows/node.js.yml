@@ -29,8 +29,14 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Install Cypress
+        run: npx cypress install
+
+      - name: Fix Cypress Permissions
+        run: chmod +x ./node_modules/.bin/cypress    
+
       - name: Clear Cypress Cache
-        run: npx cypress cache clear
+        run: ./node_modules/.bin/cypress cache clear
 
       - name: Run Cypress tests in headless Chrome
         run: npx cypress run --browser chrome --headless --config defaultCommandTimeout=10000
