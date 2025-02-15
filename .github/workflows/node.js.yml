@@ -32,11 +32,13 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Install Cypress
-        run: ./node_modules/.bin/cypress install
-
       - name: Fix Cypress Permissions
-        run: chmod +x ./node_modules/.bin/cypress    
+        run: chmod +x ./node_modules/.bin/cypress
+
+      - name: Install Cypress
+        run: npx cypress install
+
+    
 
       - name: Clear Cypress Cache
         run: ./node_modules/.bin/cypress cache clear
