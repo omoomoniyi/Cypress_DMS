@@ -6,11 +6,11 @@ name: Run Cypress Tests
 on:
   push:
     branches:
-      - main
+      - dev
       - develop
   pull_request:
     branches:
-      - main
+      - dev
       - develop
 
 jobs:
