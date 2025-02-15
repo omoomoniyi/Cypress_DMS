@@ -26,6 +26,9 @@ jobs:
         with:
           node-version: 18
 
+      - name: Delete Cypress Cache (if needed)
+        run: rm -rf ~/.cache/Cypress || true    
+
       - name: Install dependencies
         run: npm install
 
