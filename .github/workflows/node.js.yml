@@ -26,11 +26,14 @@ jobs:
         with:
           node-version: 18
 
+      - name: Clear Cypress Cache
+        run: npx cypress cache clear
+
       - name: Install dependencies
         run: npm install
 
-      - name: Run Cypress tests
-        run: npx cypress run
+      - name: Run Cypress tests in headless Chrome
+        run: npx cypress run --browser chrome --headless --config defaultCommandTimeout=10000
 
       - name: Upload Cypress screenshots (if tests fail)
         if: failure()
@@ -45,3 +48,5 @@ jobs:
         with:
           name: cypress-videos
           path: cypress/videos
+
+
