@@ -26,19 +26,14 @@ jobs:
         with:
           node-version: 18
 
-      - name: Cache Cypress Binary
-        uses: actions/cache@v3
-        with:
-          path: ~/.cache/Cypress
-          key: cypress-cache-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
-          restore-keys: |
-            cypress-cache-${{ runner.os }}-
-
       - name: Install dependencies
         run: npm install
 
-      - name: Install Cypress Binary
-        run: npx cypress install
+      - name: Fix Cypress Permissions
+        run: chmod +x ./node_modules/.bin/cypress || true
+
+      - name: Install Cypress
+        run: ./node_modules/.bin/cypress install
 
       - name: Run Cypress tests in headless Chrome
         run: npx cypress run --browser chrome --headless --config defaultCommandTimeout=10000
