@@ -44,6 +44,16 @@
       },
 
       {
+        "blankPhone": "09088752432",
+        "validPassword": "#",
+        "filePath": "",
+        "address": {
+          "name": "Omoniyi Osadare",
+          "place": "Surulere"
+        }
+      },
+
+      {
         "NonExistingCustomerPhone": "080120000000",
         "validPassword": "",
         "filePath": "",
