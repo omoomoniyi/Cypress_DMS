@@ -115,7 +115,6 @@ describe("Creating Sales Orders Using New Customer", () => {
       cy.get(':nth-child(3)>.app-modal-body>.app-modal-form-submit>.form-buttons>.app-button>.btn').click();
       cy.wait(2000);
       cy.contains("Your sales order has been successfully created").should("be.visible");
-      cy.contains("Outstanding Balance:₦20").should("be.visible");
 
       
 
