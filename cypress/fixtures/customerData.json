@@ -54,7 +54,7 @@
       },
 
       {
-        "NonExistingCustomerPhone": "080120000000",
+        "nonExistingCustomerPhone": "08012000000",
         "validPassword": "",
         "filePath": "",
         "address": {
@@ -64,7 +64,7 @@
       },
 
       {
-        "CustomerNumberNotStartingWith0": "80120000000",
+        "customerNumberNotStartingWith0": "80120000000",
         "validPassword": "",
         "filePath": "",
         "address": {

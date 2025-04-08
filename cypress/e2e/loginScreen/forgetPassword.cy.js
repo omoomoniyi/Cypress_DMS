@@ -10,10 +10,6 @@ describe('Forget Password Flow', () =>{
 
             let customerDetailsInfo = userData.customerInfo[0];
             cy.forgetPasswordExistingValidCustomer(customerDetailsInfo);
-            // cy.generatePhoneNumber().then((randomPhone) => {
-            //     cy.get('.form__input').type(randomPhone); // Adjust selector based on your form
-            //   });
-            //   
 
         });
      
@@ -28,7 +24,7 @@ describe('Forget Password Flow', () =>{
         //To read CustomerData.json
         cy.fixture('customerData').then((userData)=>{  
 
-            let customerDetailsInfo = userData.customerInfo[4];
+            let customerDetailsInfo = userData.customerInfo[5];
             cy.forgetPasswordNonExistingCustomer(customerDetailsInfo); 
 
         });
@@ -52,7 +48,7 @@ describe('Forget Password Flow', () =>{
 
     });
 
-    it('Forget Password For A Customer Phone Number That Does Not Start With 0', () => {
+    it('Forget Password For a Customer Phone Number That Does Not Start With 0', () => {
 
         cy.visit('/');
 
@@ -60,7 +56,7 @@ describe('Forget Password Flow', () =>{
         //To read CustomerData.json
         cy.fixture('customerData').then((userData)=>{  
 
-            let customerDetailsInfo = userData.customerInfo[5];
+            let customerDetailsInfo = userData.customerInfo[6];
             cy.forgetPasswordForalidCustomerPhoneThatDoesNotStartWith0(customerDetailsInfo); 
 
         });

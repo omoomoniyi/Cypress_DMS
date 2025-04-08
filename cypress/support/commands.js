@@ -80,7 +80,7 @@ Cypress.Commands.add("forgetPasswordExistingValidCustomer", (userData) => {
 
 Cypress.Commands.add("forgetPasswordNonExistingCustomer", (userData) => {
   cy.get(".ml-auto").click();
-  cy.get(".form__input").type(userData.NonExistingCustomerPhone);
+  cy.get(".form__input").type(userData.nonExistingCustomerPhone);
   cy.get(".btn").click();
   cy.wait(2000);
   cy.contains("User is not registered").should("be.visible");
@@ -98,7 +98,7 @@ Cypress.Commands.add("forgetPasswordInvalidCustomer", (userData) => {
 
 Cypress.Commands.add("forgetPasswordForalidCustomerPhoneThatDoesNotStartWith0",(userData) => {
     cy.get(".ml-auto").click();
-    cy.get(".form__input").type(userData.CustomerNumberNotStartingWith0);
+    cy.get(".form__input").type(userData.customerNumberNotStartingWith0);
     cy.get(".btn").click();
     cy.wait(1000);
     cy.contains("Phone numbers should start with 0").should("be.visible");
@@ -131,6 +131,11 @@ Cypress.Commands.add('generateFullName', () => {
         });
       } else {
         cy.log('Modal not found, continuing...');
+
+
+        
+//whvwefywefewyghfvsfhsdfbsdlfhefjhsvkdfsycvsdbfskhfsbdflkj
+        
       }
     });
   });

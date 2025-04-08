@@ -17,7 +17,7 @@ describe("Customers", () => {
         cy.get(":nth-child(1) > div > .form__input").type(fullName);
         cy.log(`Generated Name: ${fullName}`);
       });
-      cy.get(":nth-child(1) > div > .form__input").type(" Omoniyi iDan");
+      cy.get(":nth-child(1) > div > .form__input");
       cy.generateEmail().then((email) => {
         cy.get("#email").type(email);
         cy.log(email);
